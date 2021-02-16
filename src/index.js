@@ -11,11 +11,13 @@ import "./index.css";
 
 const books = [
   {
+    id: 1,
     title: "Eloquent JavaScript",
     author: "Martin Haverbeck",
     img: "https://eloquentjavascript.net/img/cover.jpg",
   },
   {
+    id: 2,
     title: "JavaScript for Impatient Programmer",
     author: "Dr. axel Rauschmayer",
     img:
@@ -26,8 +28,8 @@ const books = [
 function BookList() {
   return (
     <section className="bookList">
-      {books.map(({ img, title, author }) => {
-        return <Book img={img} author={author} title={title} />;
+      {books.map((book) => {
+        return <Book {...book} key={book.id} />;
       })}
     </section>
   );
