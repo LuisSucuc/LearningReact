@@ -9,33 +9,37 @@ import "./index.css";
       </h4>
 */
 
-const books = {
-  title: "Hola",
-  author: "man",
-  img: "https://eloquentjavascript.net/img/cover.jpg",
-};
+const books = [
+  {
+    title: "Eloquent JavaScript",
+    author: "Martin Haverbeck",
+    img: "https://eloquentjavascript.net/img/cover.jpg",
+  },
+  {
+    title: "JavaScript for Impatient Programmer",
+    author: "Dr. axel Rauschmayer",
+    img:
+      "https://wsvincent.com/assets/images/bestjavascriptbooks/js_for_impatient_programmers.jpg",
+  },
+];
 
 function BookList() {
   return (
     <section className="bookList">
-      <Book img={books.img} author={books.author} title={books.title}>
-        <p>Lorem ipsum dolor sit amet</p>
-      </Book>
-      <Book img={books.img} author={books.author} title={books.title}>
-        <p>Lorem ipsum dolor sit amet</p>
-      </Book>
+      {books.map(({ img, title, author }) => {
+        return <Book img={img} author={author} title={title} />;
+      })}
     </section>
   );
 }
 
-const Book = ({ img, title, author, children }) => {
+const Book = ({ img, title, author }) => {
   //const { img, title, author } = props;
   return (
     <article className="book">
       <img src={img} alt="Book" width="100%" />
       <h1>{title}</h1>
       <h4>{author.toUpperCase()}</h4>
-      {children}
     </article>
   );
 };
