@@ -1,36 +1,47 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-/*
-function Greeting() {
-  return (
-    <React.Fragment>
-      <div className="my-class">
-        <h3>Hello world</h3>
-        <ul>
-          <li>
-            <a href="#">Hi</a>
-          </li>
-          <img src="" alt="" />
-          <input type="text" />
-        </ul>
-      </div>
-    </React.Fragment>
-  );
-}*/
+//CSS
+import "./index.css";
 
-function Greeting() {
+function BookList() {
   return (
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section className="bookList">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const Person = () => <h2>Luis Sucuc</h2>;
-const Message = () => {
-  return <p>Message</p>;
+const Book = () => {
+  return (
+    <article className="book">
+      <Image></Image>
+      <Title />
+      <Author />
+    </article>
+  );
 };
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+const Image = () => (
+  <img
+    src="https://eloquentjavascript.net/img/cover.jpg"
+    alt="Book"
+    width="150px"
+  />
+);
+
+const Title = () => <h1>Title</h1>;
+
+const Author = () => <h4>Matthew Sucuc</h4>;
+
+ReactDom.render(<BookList />, document.getElementById("root"));
