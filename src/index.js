@@ -9,21 +9,8 @@ import "./index.css";
       </h4>
 */
 
-const books = [
-  {
-    id: 1,
-    title: "Eloquent JavaScript",
-    author: "Martin Haverbeck",
-    img: "https://eloquentjavascript.net/img/cover.jpg",
-  },
-  {
-    id: 2,
-    title: "JavaScript for Impatient Programmer",
-    author: "Dr. axel Rauschmayer",
-    img:
-      "https://wsvincent.com/assets/images/bestjavascriptbooks/js_for_impatient_programmers.jpg",
-  },
-];
+import { books } from "./books.js"; //Importar variable
+import Book from "./Book.js"; //Importar componente
 
 function BookList() {
   return (
@@ -34,16 +21,5 @@ function BookList() {
     </section>
   );
 }
-
-const Book = ({ img, title, author }) => {
-  //const { img, title, author } = props;
-  return (
-    <article className="book">
-      <img src={img} alt="Book" width="100%" />
-      <h1>{title}</h1>
-      <h4>{author.toUpperCase()}</h4>
-    </article>
-  );
-};
 
 ReactDom.render(<BookList />, document.getElementById("root"));
