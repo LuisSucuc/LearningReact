@@ -11,8 +11,10 @@ import "./index.css";
 
 import { books } from "./books.js"; //Importar variable
 import Book from "./Book.js"; //Importar componente
+import { greeting } from "./testing/testing.js";
 
 function BookList() {
+  console.log(greeting);
   return (
     <section className="bookList">
       {books.map((book) => {

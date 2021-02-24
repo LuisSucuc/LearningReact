@@ -13,7 +13,7 @@ export const books = [
       "https://wsvincent.com/assets/images/bestjavascriptbooks/js_for_impatient_programmers.jpg",
   },
   {
-    id: 2,
+    id: 3,
     title: "Hands-on Django",
     author: "Brandon Lorenz",
     img:
